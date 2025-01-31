@@ -258,7 +258,19 @@
         function restartQuiz() {
             currentQuestion = 0;
             score = 0;
+            // 重置進度條
             document.getElementById('progress').style.width = '0%';
+    
+            // 清除名字輸入
+            document.getElementById('player-name').value = '';
+    
+            // 重置問題容器的內容
+            document.querySelector('.question-container').innerHTML = `
+                <div id="question" class="disney-border"></div>
+                <div class="options" id="options"></div>
+            `;
+    
+            // 顯示名字輸入區域，隱藏測驗區域
             document.getElementById('player-section').classList.remove('hidden');
             document.getElementById('quiz-section').classList.add('hidden');
         }
